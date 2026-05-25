@@ -12,10 +12,10 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__) 
 CORS(app)  
 
-# ✅ FIXED: Using your exact env var name "Gemini API Key"
-API_KEY = os.environ.get("Gemini API Key")
+# ✅ FIXED: Using your exact env var name "Gemini _API_Key"
+API_KEY = os.environ.get("Gemini _API_Key")
 if not API_KEY:
-    raise ValueError("Gemini API Key environment variable not set. Get one at https://aistudio.google.com/api-keys")
+    raise ValueError("Gemini _API_Key environment variable not set. Get one at https://aistudio.google.com/api-keys")
 
 client = genai.Client(api_key=API_KEY)  
 
