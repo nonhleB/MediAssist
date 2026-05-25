@@ -3,8 +3,9 @@ import json
 import logging
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
-import anthropic
+from google import genai
 
+client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
